@@ -7,4 +7,4 @@ def my_view(request):
 
 @view_config(route_name='cancion-nueva', renderer='templates/agregar.jinja2')
 def cancion_nueva(request):
-    return { }
+    return { 'project': 'cancionduff' }
