@@ -1,0 +1,3 @@
+[run]
+source = cancionduff
+omit = cancionduff/test*
