@@ -24,3 +24,7 @@ def cancion_consultar(request):
 @view_config(route_name='cancion-listar', renderer='templates/listar.jinja2')
 def cancion_listar(request):
     return { }
+
+@view_config(route_name='cancion-principal', renderer='templates/index.jinja2')
+def cancion_principal(request):
+    return { }
