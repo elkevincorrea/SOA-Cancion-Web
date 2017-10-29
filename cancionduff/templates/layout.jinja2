@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="pyramid web application">
-    <meta name="author" content="Pylons Project">
-    <link rel="shortcut icon" href="{{request.static_url('cancionduff:static/pyramid-16x16.png')}}">
+    <meta name="description" content="Soa Aplication">
+    <meta name="author" content="Hector Avila">
+    <link rel="shortcut icon" href="{{request.static_url('cancionduff:static/img/repro.png')}}">
 
-    <title>Starter Scaffold for The Pyramid Web Framework</title>
+    <title>Canciones Duff</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{ request.static_url('cancionduff:static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -30,7 +30,7 @@
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Canciones Duff!</a>
+        <a class="navbar-brand" href="">Canciones Duff!</a>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto">
@@ -38,13 +38,13 @@
               <a class="nav-link" href="{{ request.route_url('cancion-nueva') }}">Insertar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="Eliminar.html">Eliminar</a>
+              <a class="nav-link" href="{{ request.route_url('cancion-eliminar') }}">Eliminar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Actualizar</a>
+              <a class="nav-link" href="{{ request.route_url('cancion-actualizar') }}">Actualizar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Consultar</a>
+              <a class="nav-link" href="{{ request.route_url('cancion-consultar') }}">Consultar</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Lista Canciones</a>

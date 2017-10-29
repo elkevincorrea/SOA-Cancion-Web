@@ -1,0 +1,49 @@
+{% extends "layout.jinja2" %}
+{% block content %}
+    <br>
+    <div class="row">
+        <div class="card col-sm-6 offset-sm-3">
+            <h1 class="panel-title text-center text-muted">Eliminar Cancion</h1>
+            <form>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <input type="text" name="id" id="id" class="form-control input-sm" placeholder="ID" required>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-4 offset-sm-4">
+                                <input type="submit" class="btn btn-info btn-block " value="Buscar"/>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group">
+                            <input type="text" name="titulo" id="titulo" class="form-control input-sm"
+                                   placeholder="Titulo" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="nombre-art" id="nombre-art" class="form-control input-sm"
+                                   placeholder="Nombre del artista" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="genero" id="genero" class="form-control input-sm"
+                                   placeholder="Genero Musical" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="fecha" id="first_name" class="form-control input-sm"
+                                   placeholder="Fecha Lanzamiento" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-4 offset-sm-4">
+                            <input type="submit" class="btn btn-danger btn-block " value="Eliminar"/>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+{% endblock content %}
