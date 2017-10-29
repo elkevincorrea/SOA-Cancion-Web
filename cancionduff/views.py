@@ -20,3 +20,7 @@ def cancion_actualizar(request):
 @view_config(route_name='cancion-consultar', renderer='templates/consultar.jinja2')
 def cancion_consultar(request):
     return { }
+
+@view_config(route_name='cancion-listar', renderer='templates/listar.jinja2')
+def cancion_listar(request):
+    return { }

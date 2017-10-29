@@ -47,7 +47,7 @@
               <a class="nav-link" href="{{ request.route_url('cancion-consultar') }}">Consultar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Lista Canciones</a>
+              <a class="nav-link" href="{{ request.route_url('cancion-listar') }}">Lista Canciones</a>
             </li>
           </ul>
         </div>
@@ -58,6 +58,7 @@
             <p>No content</p>
         {% endblock content %}
     </div>
+    
 
     <!-- Bootstrap core JavaScript
     ================================================== -->

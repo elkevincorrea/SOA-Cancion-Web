@@ -12,5 +12,6 @@ def main(global_config, **settings):
     config.add_route('cancion-eliminar', '/cancion-eliminar')
     config.add_route('cancion-actualizar', '/cancion-actualizar')
     config.add_route('cancion-consultar', '/cancion-consultar')
+    config.add_route('cancion-listar', '/cancion-listar')
     config.scan()
     return config.make_wsgi_app()
