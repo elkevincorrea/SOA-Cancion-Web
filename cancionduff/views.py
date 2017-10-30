@@ -13,12 +13,13 @@ def my_view(request):
 def cancion_nueva(request):
     if request.POST:
         id = request.POST['id']
+        duracion = request.POST['duracion']
         titulo = request.POST['titulo']
         nombre_artista = request.POST['nombreArtista']
         genero = request.POST['genero']
         fecha_lanzamiento = request.POST['fecha']
         fecha_lanzamiento = datetime.strptime(fecha_lanzamiento, '%Y-%m-%d')
-        cancion = factory.cancion(id = id, titulo = titulo, nombreArtista = nombre_artista, genero = genero, fechaLanzamiento = fecha_lanzamiento)
+        cancion = factory.cancion(id = id, titulo = titulo, nombreArtista = nombre_artista, genero = genero, fechaLanzamiento = fecha_lanzamiento, duracion=duracion)
         try:
             cliente.service.adicionarCancion(cancion)
             return {'exito': 'Canción agregada correctamente :)'}
@@ -47,13 +48,14 @@ def cancion_eliminar(request):
 def cancion_actualizar(request):
     if request.POST:
         id = request.POST['id']
+        duracion = request.POST['duracion']
         titulo = request.POST['titulo']
         nombre_artista = request.POST['nombreArtista']
         genero = request.POST['genero']
         fecha_lanzamiento = request.POST['fecha']
         fecha_lanzamiento = datetime.strptime(fecha_lanzamiento, '%Y-%m-%d')
         cancion = factory.cancion(id=id, titulo=titulo, nombreArtista=nombre_artista, genero=genero,
-                                  fechaLanzamiento=fecha_lanzamiento)
+                                  fechaLanzamiento=fecha_lanzamiento, duracion=duracion)
         try:
             cliente.service.actualizarCancion(cancion)
             return {'cancion': cancion, 'exito': 'Canción actualizada!'}
