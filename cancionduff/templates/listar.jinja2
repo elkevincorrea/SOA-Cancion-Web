@@ -11,6 +11,7 @@
         <th scope="colgroup">Nombre Artista</th>
         <th scope="colgroup">Genero Musical</th>
         <th scope="colgroup">Fecha Lanzamiento</th>
+        <th scope="colgroup">Duracion</th>
     </tr>
   </thead>
     <tbody>
@@ -21,6 +22,7 @@
             <td>{{ cancion.nombreArtista }}</td>
             <td>{{ cancion.genero }}</td>
             <td>{{ cancion.fechaLanzamiento.strftime('%d-%m-%Y') }}</td>
+            <td>{{ cancion.duracion }}</td>
         </tr>
     {% endfor %}
     </tbody>

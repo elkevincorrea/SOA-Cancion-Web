@@ -38,6 +38,9 @@
                         <input type="date" id="fecha" name="fecha" class="form-control input-sm" value="{{ cancion.fechaLanzamiento.strftime('%Y-%m-%d') if cancion is defined}}"
                                placeholder="Fecha Lanzamiento" required>
                     </div>
+                    <div class="form-group">
+                        <input  type="number" name="duracion" id="duracion" class="form-control input-sm" value="{{ cancion.duracion if cancion is defined}}" placeholder="Duracion">
+                    </div>
                 </div>
 
                 <div class="row">
