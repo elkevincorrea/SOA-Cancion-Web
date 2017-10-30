@@ -14,39 +14,15 @@
     </tr>
   </thead>
     <tbody>
-    <tr>
-        <th scope="row">1</th>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-
-    </tr>
-    <tr>
-        <th scope="row">2</th>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-
-    </tr>
-    <tr>
-        <th scope="row">3</th>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-
-    </tr>
-    <tr>
-        <th scope="row">4</th>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-        <td> dssda</td>
-
-    </tr>
-
+    {% for cancion in canciones %}
+        <tr>
+            <th scope="row">{{ cancion.id }}</th>
+            <td>{{ cancion.titulo }}</td>
+            <td>{{ cancion.nombreArtista }}</td>
+            <td>{{ cancion.genero }}</td>
+            <td>{{ cancion.fechaLanzamiento.strftime('%d-%m-%Y') }}</td>
+        </tr>
+    {% endfor %}
     </tbody>
 </table>
 </div>
