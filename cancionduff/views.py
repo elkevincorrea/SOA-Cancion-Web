@@ -21,16 +21,50 @@ def cancion_nueva(request):
         cancion = factory.cancion(id = id, titulo = titulo, nombreArtista = nombre_artista, genero = genero, fechaLanzamiento = fecha_lanzamiento)
         try:
             cliente.service.adicionarCancion(cancion)
+            return {'exito': 'Canción agregada correctamente :)'}
         except Exception as error:
             return {'error': error}
     return {}
 
 @view_config(route_name='cancion-eliminar', renderer='templates/eliminar.jinja2')
 def cancion_eliminar(request):
+    if request.POST:
+        id = request.POST['id']
+        try:
+            cliente.service.eliminarCancion(id)
+            return {'exito': 'Canción eliminada'}
+        except Exception as error:
+            return {'error': error}
+    elif request.GET.has_key('id'):
+        try:
+            cancion = cliente.service.buscarCancion(int(request.GET['id']))
+            return {'cancion': cancion}
+        except Exception as error:
+            return {'error': error}
     return { }
 
 @view_config(route_name='cancion-actualizar', renderer='templates/actualizar.jinja2')
 def cancion_actualizar(request):
+    if request.POST:
+        id = request.POST['id']
+        titulo = request.POST['titulo']
+        nombre_artista = request.POST['nombreArtista']
+        genero = request.POST['genero']
+        fecha_lanzamiento = request.POST['fecha']
+        fecha_lanzamiento = datetime.strptime(fecha_lanzamiento, '%Y-%m-%d')
+        cancion = factory.cancion(id=id, titulo=titulo, nombreArtista=nombre_artista, genero=genero,
+                                  fechaLanzamiento=fecha_lanzamiento)
+        try:
+            cliente.service.actualizarCancion(cancion)
+            return {'cancion': cancion, 'exito': 'Canción actualizada!'}
+        except Exception as error:
+            return {'error': error}
+    elif request.GET.has_key('id'):
+        try:
+            cancion = cliente.service.buscarCancion(int(request.GET['id']))
+            return {'cancion': cancion}
+        except Exception as error:
+            return {'error': error}
     return { }
 
 @view_config(route_name='cancion-consultar', renderer='templates/consultar.jinja2')
