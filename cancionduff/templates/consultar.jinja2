@@ -7,7 +7,7 @@
             <form>
                 <div class="panel-body">
                     <div class="form-group">
-                        <input type="text" name="id" id="id" class="form-control input-sm" placeholder="ID" required>
+                        <input type="number" name="id" id="id" class="form-control input-sm" value="{{ cancion.id if cancion is defined}}" placeholder="ID" required>
                     </div>
                     <div class="row">
                     <div class="col-sm-4 offset-sm-4">
@@ -16,26 +16,26 @@
                 </div>
                     <br>
                     <div class="form-group">
-                        <input type="text" name="titulo" id="titulo" class="form-control input-sm" readonly placeholder="Titulo"
+                        <input type="text" id="titulo" class="form-control input-sm" readonly placeholder="Titulo" value="{{ '%s' % cancion.titulo if cancion is defined}}"
                                required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="nombre-art" id="nombre-art" readonly class="form-control input-sm"
+                        <input type="text" id="nombre-art" readonly class="form-control input-sm" value="{{ cancion.nombreArtista if cancion is defined}}"
                                placeholder="Nombre del artista" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="genero" id="genero" class="form-control input-sm"
+                        <input type="text" id="genero" class="form-control input-sm" value="{{ cancion.genero if cancion is defined}}"
                                placeholder="Genero Musical" readonly required>
                     </div>
                     <div class="form-group">
-                        <input type="date" name="fecha" id="first_name" readonly class="form-control input-sm"
+                        <input type="tel" id="fecha" readonly class="form-control input-sm" value="{{ cancion.fechaLanzamiento.strftime('%d-%m-%Y') if cancion is defined}}"
                                placeholder="Fecha Lanzamiento" required>
                     </div>
                 </div>
 
 
                 <br>
-
+                <p class="text-danger">{{ error }}</p>
             </form>
 
         </div>

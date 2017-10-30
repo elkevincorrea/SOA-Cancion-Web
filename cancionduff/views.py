@@ -35,6 +35,12 @@ def cancion_actualizar(request):
 
 @view_config(route_name='cancion-consultar', renderer='templates/consultar.jinja2')
 def cancion_consultar(request):
+    if request.GET.has_key('id'):
+        try:
+            cancion = cliente.service.buscarCancion(int(request.GET['id']))
+            return {'cancion': cancion}
+        except Exception as error:
+            return {'error': error}
     return { }
 
 @view_config(route_name='cancion-listar', renderer='templates/listar.jinja2')
